@@ -33,27 +33,30 @@ public class getWordsServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String userWords = request.getParameter("userWords");
+		//System.out.println();
+		
+		//String userWords = request.getParameter("userWords");
 		String userAdjective = request.getParameter("userAdjective");
 		String userNoun = request.getParameter("userNoun");
 		String userVerb = request.getParameter("userVerb");
 		
 		//adding this model to process word into all caps
-		MadLib userWords1 = new MadLib(userWords); //error 500
+		MadLib userWords1 = new MadLib(userAdjective, userNoun, userVerb); //error 500
 		
 		//adding this to redirect to another jsp page
-		request.setAttribute("userLib", userWords);
+		request.setAttribute("userLib", userAdjective);
 		getServletContext().getRequestDispatcher("/result.jsp").forward(request,  response);
 		
 		PrintWriter writer = response.getWriter();
 		//writer.println("I attend DMACC. I am a " + userAdjective.toUpperCase() + " student. I am studying " + userNoun.toUpperCase()+". My academic standing is " + userVerb.toUpperCase()+".");
 		
-		//adding a new println for the processed adjective
+		//adding a new println for the processed input
 		writer.println(userWords1.toString());
 		//writer.println(userAdjective.toUpperCase());
 		//writer.println(userNoun.toUpperCase());
 		//writer.println(userVerb.toUpperCase());
 		writer.close();
+		
 	}
 
 }

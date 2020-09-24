@@ -1,5 +1,7 @@
 package model;
 
+//Luke Xiong
+
 public class MadLib {
 	
 	private String words;
@@ -10,25 +12,29 @@ public class MadLib {
 	public MadLib() {
 		super();
 	}
-	
-	public MadLib(String words) {
+	//changed words to adjective
+	public MadLib(String adjective, String noun, String verb) {
 		super();
-		this.words = words;
-		setLib(words); //error
+		this.adjective = adjective;
+		this.noun = noun;//added this
+		this.verb = verb;
+		setLib(adjective, noun, verb); //error
+	}
+	//changed words to adjective
+	public void setWords(String adjective, String noun, String verb) {
+		this.adjective = adjective;
+		this.noun = noun;//added this
+		this.verb = verb;
+		//setLib(adjective, noun, verb); //throwing error status 500
 	}
 	
-	public void setWords(String words) {
-		this.words = words;
-		setLib(words); //throwing error status 500 - fixed
-	}
-	
-	public void setLib(String words) {
-		final String WORDS = null;
-		final String ADJECTIVE = null;
-		final String NOUN = null;
-		final String VERB = null;
+	public void setLib(String adjective, String noun, String verb) {
+		final String WORDS = "word";
+		final String ADJECTIVE = "adjective";
+		final String NOUN = "noun";
+		final String VERB = "verb";
 		
-		setWords(WORDS.toUpperCase()); //error
+		setWords(ADJECTIVE.toUpperCase(), NOUN.toUpperCase(), VERB.toUpperCase()); //error
 		setAdjective(ADJECTIVE.toUpperCase());
 		setNoun(NOUN.toUpperCase());
 		setVerb(VERB.toUpperCase());

@@ -18,7 +18,8 @@ public class MadLib {
 		this.adjective = adjective;
 		this.noun = noun;//added this
 		this.verb = verb;
-		setLib(adjective, noun, verb); //error
+		//This line was rewriting all the instance variables with final values.
+		//setLib(adjective, noun, verb); //error
 	}
 	//changed words to adjective
 	public void setWords(String adjective, String noun, String verb) {

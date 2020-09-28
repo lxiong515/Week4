@@ -44,9 +44,13 @@ public class getWordsServlet extends HttpServlet {
 		MadLib userWords1 = new MadLib(userAdjective, userNoun, userVerb); //error 500
 		
 		//adding this to redirect to another jsp page
-		request.setAttribute("userLib", userAdjective);
+		//The variable you set on the results.jsp is called 'setLib' not - userLib
+		//THen you have to pass over the MadLib object that you created - userWords 1
+		request.setAttribute("setLib", userWords1);
 		getServletContext().getRequestDispatcher("/result.jsp").forward(request,  response);
 		
+		
+		//This stuff will never print because it's after the redirect.  It's not needed.
 		PrintWriter writer = response.getWriter();
 		//writer.println("I attend DMACC. I am a " + userAdjective.toUpperCase() + " student. I am studying " + userNoun.toUpperCase()+". My academic standing is " + userVerb.toUpperCase()+".");
 		

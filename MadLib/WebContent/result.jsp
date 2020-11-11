@@ -11,8 +11,8 @@
 <body>
 <p> Your MadLib: <br />
 I attend DMACC. I am a ${setLib.getAdjective() } student. <br />
-I am studying ${setLib.getNoun() } . <br />
-My academic standing is ${setLib.getVerb() } . <br />
+I am studying ${setLib.getNoun() }. <br />
+My academic standing is ${setLib.getVerb() }. <br />
 <!-- tried setLib and MadLib.Both worked but no parameters printing -->
 </p>
 <a href="index.jsp">Start a new MadLib!</a>

@@ -14,12 +14,13 @@ public class MadLib {
 	}
 	//changed words to adjective
 	public MadLib(String adjective, String noun, String verb) {
-		super();
+		//super();
 		this.adjective = adjective;
 		this.noun = noun;//added this
 		this.verb = verb;
-		//This line was rewriting all the instance variables with final values.
-		//setLib(adjective, noun, verb); //error
+		//setLib(adjective, noun, verb); //error - delete *** 
+		//this line ^ rewrites all the instance variables with final values
+		
 	}
 	//changed words to adjective
 	public void setWords(String adjective, String noun, String verb) {
